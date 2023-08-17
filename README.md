@@ -10,7 +10,6 @@ This project involves the analysis and visualization of Exchange-Traded Fund (ET
 - [Data Preparation](#data-preparation)
 - [Analysis and Visualization](#analysis-and-visualization)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
