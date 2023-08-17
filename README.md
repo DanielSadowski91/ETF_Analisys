@@ -1,29 +1,66 @@
 # ETF_Analyst
 
+# ETF Data Analysis and Visualization
 
-1. **Calculating Daily Returns and Volatility** :
+This project involves the analysis and visualization of Exchange-Traded Fund (ETF) data using Python and various libraries, including Pandas, NumPy, Matplotlib, and Seaborn. The goal is to gain insights into ETF trading volume, mean prices, returns, volatility, and correlation.
 
-* The code calculates daily returns for each ETF using the percentage change in the 'Close' prices.
-* Annualized volatility is calculated for each ETF using the standard deviation of daily returns multiplied by the square root of 252 (assuming 252 trading days in a year).
-* A bar plot is created to visualize the volatility of each ETF.
+## Table of Contents
 
-1. **Calculating and Visualizing Correlation Matrix** :
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Data Preparation](#data-preparation)
+- [Analysis and Visualization](#analysis-and-visualization)
+- [Contributing](#contributing)
+- [License](#license)
 
-* The code calculates the correlation matrix between daily returns of different ETFs.
-* The correlation matrix is visualized as a heatmap, showing the correlation values between ETF pairs.
+## Introduction
 
-1. **Calculating and Analyzing Price Differences** :
+This project provides a Python script that reads and analyzes ETF data from CSV files stored in a specified directory. The script performs various data cleaning, calculation, and visualization tasks to provide insights into ETF trading patterns and performance.
 
-* The code calculates the price difference and percentage difference between the first and last closed prices for each ETF.
-* The percentage difference is calculated as `(last_closed_price - first_closed_price) / first_closed_price * 100`.
-* The ETF name and price difference are printed.
+## Getting Started
 
-1. **Plotting Individual Return Analysis** :
+To use this project, you'll need Python and the required libraries installed on your system. You can install the required libraries using the following command:
 
-* For each ETF, the code calculates and plots simple returns, logarithmic returns, and cumulative returns.
-* Two subplots are created for each ETF: one for simple returns and one for cumulative returns.
-* Simple returns are calculated as the percentage change between 'Open' and 'Close' prices.
-* Logarithmic returns are calculated using the logarithm of the ratio of 'Close' to 'Open' prices.
-* Cumulative returns are calculated as the cumulative product of (1 + simple return) over time.
+```bash
+pip install pandas numpy matplotlib seaborn
+```
 
-These additions help provide a more comprehensive analysis of the ETF data, including return analysis and volatility assessment. Keep in mind that financial data analysis can be complex, and the accuracy of the results heavily depends on the quality of the data and the assumptions made during calculations. It's also important to ensure that your analysis aligns with your specific goals and use cases.
+
+Clone this repository to your local machine using:
+
+<pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">git clone https://github.com/yourusername/etf-analysis.git</code></div></div></pre>
+
+
+## Usage
+
+1. Place your ETF data CSV files in the 'database' directory.
+2. Modify the `database_path` variable in the script to point to the location of your CSV files.
+3. Run the script using a Python interpreter:
+
+<pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">python etf_analysis.py
+</code></div></div></pre>
+
+## Data Preparation
+
+The script reads CSV files in the specified directory, combines them into a single dataframe, and performs the following data preparation steps:
+
+* Converts 'Date' column to datetime format.
+* Adds 'Year', 'Month', and 'Day' columns extracted from 'Date'.
+* Calculates mean values of 'Open', 'High', 'Low', and 'Close' columns.
+* Computes daily returns and annualized volatility.
+* Calculates and visualizes correlation matrix of ETF returns.
+
+## Analysis and Visualization
+
+The script performs the following analysis and visualization tasks:
+
+* Visualizes total trading volume for each ETF.
+* Generates line plots for trading volume and mean price analysis.
+* Calculates and displays percentage difference in prices.
+* Plots individual return analysis for each ETF.
+* Creates heatmap to visualize correlation between ETF returns.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to add improvements, feel free to open a pull request or submit an issue.
